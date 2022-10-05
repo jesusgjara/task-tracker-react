@@ -1,16 +1,18 @@
-import PropTypes from 'prop-types'
-import Task from './Task'
+import PropTypes from "prop-types";
+import Task from "./Task";
 
-const Tasks = ({ tasks }) => {    
-    return (
-        <>
-            {tasks.map((task) => (<Task key={task.id} task={task}/>))}
-        </>
-    )
-}
+const Tasks = ({ tasks, onDelete, onToggle }) => {
+  return (
+    <>
+      {tasks.map((task) => (
+        <Task onToggle={onToggle} key={task.id} task={task} onDelete={onDelete}/>
+      ))}
+    </>
+  );
+};
 
 Tasks.propTypes = {
-    tasks: PropTypes.array
-}
+  tasks: PropTypes.array,
+};
 
-export default Tasks
+export default Tasks;
